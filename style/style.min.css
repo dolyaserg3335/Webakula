@@ -9,15 +9,17 @@ footer{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto}
 footer,header,main{overflow:hidden}
 .btn{display:inline-block;padding:15px 35px;color:#000;font-size:18px;background:#fbd341;border-radius:12px;cursor:pointer}
 .fa-phone{-webkit-transform:rotate(90deg);transform:rotate(90deg)}
-.burger{display:none;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:150px;height:50px;background:#fbd341;border-radius:15px;color:#000;font-weight:700;font-size:1.7rem;margin-top:30px;padding:10px}
-.burger span{position:relative;width:30px;height:2px;background:#000;-webkit-transition:.5s;transition:.5s}
-.burger span::after{content:'';display:block;position:absolute;width:30px;height:2px;background:#000;top:-10px;-webkit-transition:all .5s;transition:all .5s}
-.burger span::before{content:'';position:absolute;display:block;width:30px;height:2px;background:#000;top:10px;-webkit-transition:all .5s;transition:all .5s}
+.burger{display:none;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:120px;height:30px;background:#fbd341;border-radius:7px;color:#000;font-weight:700;font-size:1rem;margin-top:30px;padding:10px}
+.burger span{position:relative;width:30px;height:1px;background:#000;-webkit-transition:.5s;transition:.5s}
+.burger span::after{content:'';display:block;position:absolute;width:30px;height:1px;background:#000;top:-8px;-webkit-transition:.5s;transition:.5s}
+.burger span::before{content:'';position:absolute;display:block;width:30px;height:1px;background:#000;top:8px;-webkit-transition:all .5s;transition:all .5s}
 .burger span.active{background:#fbd341}
-.burger span.active::after,.burger span.active::before{-webkit-transform-origin:left;transform-origin:left;background:red}
-.burger span.active::after{-webkit-transform:rotate(45deg);transform:rotate(45deg)}
-.burger span.active::before{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
-header{background:url(../img/banner1.jpg);background-size:cover;background-repeat:no-repeat;-webkit-transition:all 1s ease-in-out;transition:all 1s ease-in-out}
+.burger span.active::after,.burger span.active::before{background:red}
+.burger span.active::after{top:0;-webkit-transform:rotate(35deg);transform:rotate(35deg)}
+.burger span.active::before{top:0;-webkit-transform:rotate(-35deg);transform:rotate(-35deg)}
+header{position:relative}
+header .slider{position:absolute;z-index:-1;width:100%;height:100%;top:0;left:0}
+header .slider img{height:100%}
 header .wrapperHeader{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:space-evenly;-ms-flex-pack:space-evenly;justify-content:space-evenly;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap}
 header .wrapperHeader address{display:-webkit-box;display:-ms-flexbox;display:flex}
 header .wrapperHeader address a{color:#fff;margin-top:15px;margin-bottom:15px}
@@ -30,23 +32,23 @@ header .wrapperHeader address a i{margin-right:5px}
 header .wrapperHeader nav{padding-right:100px}
 header .wrapperHeader nav ul{display:-webkit-box;display:-ms-flexbox;display:flex;background:#fbd341;border-radius:6px;margin-bottom:232px}
 header .wrapperHeader nav ul li{padding:8px 23px;font-size:18px;font-weight:700;position:relative}
-header .wrapperHeader nav ul li .submenu{display:none;color:#fff;background:rgba(51,151,226,.8);border-radius:0;margin-top:8px}
-header .wrapperHeader nav ul li.active .submenu{display:block;position:absolute}
+header .wrapperHeader nav ul li .submenu{display:none;position:absolute;max-height:600px;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-ms-flex-wrap:wrap;flex-wrap:wrap;background:rgba(51,151,226,.8);border-radius:0;margin-top:8px;z-index:5;-webkit-box-flex:content;-ms-flex:content;flex:content}
+header .wrapperHeader nav ul li .submenu a{color:#fff}
+header .wrapperHeader nav ul li.active .submenu{display:-webkit-box;display:-ms-flexbox;display:flex}
 header .wrapperBanner{background:rgba(1,73,128,.2);width:70vw;padding-left:18vw;margin-bottom:142px}
 header .wrapperBanner h2{font-size:30px;color:#fff;padding-top:69px;padding-bottom:43px}
 header .wrapperBanner .btn{margin-bottom:63px}
 header .dotWrapper{margin-left:17vw;margin-bottom:25px}
 header .dotWrapper .dot{display:inline-block;width:15px;height:15px;background:#ccecf1;margin-right:14px;border-radius:50%;cursor:pointer}
 header .dotWrapper .dot.active{background:#fbd341}
-.offers{position:relative}
 .offers .wrapperHotLink{display:-webkit-box;display:-ms-flexbox;display:flex;margin-left:17vw}
 .offers .wrapperHotLink h3{font-size:1.4rem;color:#000;padding-right:20px;padding-bottom:85px;padding-top:73px;cursor:pointer}
 .offers .wrapperHotLink h3.active{color:#fbd341}
-.offers .slider{margin:0 47px}
-.offers .next,.offers .prev{position:absolute;top:75%;font-size:1.4rem}
+.offers .slider{margin:0 47px;position:relative}
+.offers .next,.offers .prev{position:absolute;top:80%;font-size:1.4rem}
 .offers .next{left:20px}
 .offers .prev{right:20px}
-.offers .cardTur{display:-webkit-box;display:-ms-flexbox;display:flex}
+.offers .cardTur{display:-webkit-box;display:-ms-flexbox;display:flex;margin-left:25px;margin-right:25px}
 .offers .cardTur img{width:188px;height:177px;border-radius:15px}
 .offers .cardTur .cardRec{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;padding:14px 20px}
 .offers .cardTur .cardRec h4{font-weight:700;font-size:1.2rem}
@@ -57,6 +59,7 @@ header .dotWrapper .dot.active{background:#fbd341}
 .offers .cardTur .cardRec .wrapperPrice .price span{vertical-align:10px;font-size:.8rem}
 .offers .cardTur .cardRec .wrapperPrice .btn{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:35px;height:35px;border-radius:50%;-ms-flex-negative:0;flex-shrink:0;padding:0}
 .offers .best{display:none}
+.offers .next2,.offers .prev2{display:none}
 .privilege{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-wrap:wrap;flex-wrap:wrap;padding-left:17vw;padding-right:17vw}
 .privilege h2{margin-top:130px;width:100%;font-size:1.7rem;margin-bottom:60px}
 .privilege img{width:45%;padding-bottom:30px}
@@ -64,12 +67,12 @@ header .dotWrapper .dot.active{background:#fbd341}
 .proposition{padding-left:17vw;padding-right:17vw;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;background:url(../img/sea.jpg);background-size:cover;background-repeat:no-repeat}
 .proposition h2{font-size:1.7rem;color:#fff;width:100%;padding-top:50px;padding-bottom:35px}
 .proposition form{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:100%;background:rgba(0,0,0,.4);margin-bottom:44px}
-.proposition form input,.proposition form select{font-size:1.3rem;color:#fff;margin-left:30px;width:15%;height:20px;margin-top:55px;margin-bottom:55px;border:none;border-bottom:1px solid #fff;background:rgba(0,0,0,.4)}
+.proposition form input,.proposition form select{font-size:1.3rem;color:#fff;margin-left:30px;margin-right:30px;width:15%;height:20px;margin-top:55px;border:none;border-bottom:1px solid #fff;background:rgba(0,0,0,.4)}
 .proposition form input::-webkit-input-placeholder,.proposition form select::-webkit-input-placeholder{color:#fff;font-size:1.3rem;padding-left:14px}
 .proposition form input:-ms-input-placeholder,.proposition form select:-ms-input-placeholder{color:#fff;font-size:1.3rem;padding-left:14px}
 .proposition form input::-ms-input-placeholder,.proposition form select::-ms-input-placeholder{color:#fff;font-size:1.3rem;padding-left:14px}
 .proposition form input::placeholder,.proposition form select::placeholder{color:#fff;font-size:1.3rem;padding-left:14px}
-.proposition form input[type=submit],.proposition form select[type=submit]{background:#fbd341;text-align:center;vertical-align:center;height:50px;width:250px;color:#000;padding:5px}
+.proposition form input[type=submit],.proposition form select[type=submit]{background:#fbd341;text-align:center;vertical-align:center;height:50px;width:250px;color:#000;padding:5px;margin-bottom:55px}
 .proposition form input option,.proposition form select option{color:#000;background:#fff;font-size:1.3rem;margin-left:10px;padding-right:10px}
 .proposition form input option[selected],.proposition form select option[selected]{color:#fff}
 .proposition form input:invalid{border-bottom:1px solid #red}
@@ -115,7 +118,7 @@ footer .navigation{width:100%}
 @media (max-width:700px){
 html{font-size:18px}
 .navigation ul{margin-bottom:0!important;-ms-flex-wrap:wrap;flex-wrap:wrap}
-.navigation ul li{text-align:center;width:100%}
+.navigation ul li{text-align:center;width:100%;max-height:unset}
 .navigation ul li .submenu{position:static!important}
 .proposition{padding-left:0;padding-right:10px}
 .proposition h2{width:100%;text-align:center}

@@ -9,27 +9,6 @@ function subMenu(){
 		});
 	}	
 }
-function bgSlider(){
-	var dots = document.querySelectorAll('.dot');
-	var header = document.querySelector('header');
-	var bg=['img/banner1.jpg', 'img/banner2.jpg', 'img/banner3.jpg','img/banner4.jpg','img/banner5.jpg'];
-	var index =0;
-
-	function setBg(){
-		header.style.backgroundImage = 'url("' + bg[index] + '")'; 
-		index++;
-	}
-	var interval=setInterval(function(){
-		if(index < bg.length){
-			setBg();
-
-		}
-		else{
-			index = 0;
-			setBg();
-		}
-	},4000 );
-}
 function burger(){
 	const burger = document.querySelector('.burger');
 	const burgerSpan = document.querySelector('.burger>span');
@@ -39,6 +18,50 @@ function burger(){
 		menu.classList.toggle('active');
 	})
 }
+function maxMenuLi(){
+	var submenu = document.querySelector('.submenu')
+	var liSubmenu =document.querySelectorAll('.submenu>li');
+	var widthMenu=window.getComputedStyle(submenu).width;
+		console.log(widthMenu);
+		if(liSubmenu.length > 15 || liSubmenu <30){
+			submenu.style.width = '500px';
+		}
+		if(liSubmenu>30){
+			submenu.style.width = '750px';
+		}
+
+}
+function tab(){
+	var hotLink = document.querySelector('.hotLink');
+	var bestLink = document.querySelector('.bestLink');
+	var hot = document.querySelector('.hot');
+	var best = document.querySelector('.best');
+	var prev1 = document.querySelector('.prev1');
+	var prev2 = document.querySelector('.prev2');
+	var next1 = document.querySelector('.next1');
+	var next2 = document.querySelector('.next2');
+	hotLink.addEventListener('click',function(){
+		hotLink.classList.add('active');
+		bestLink.classList.remove('active');
+		hot.style.display = 'block';
+		best.style.display = 'none';
+		prev1.style.display ='block';
+		prev2.style.display ='none';
+		next1.style.display ='block';
+		next2.style.display ='none';
+	})
+	bestLink.addEventListener('click',function(){
+		hotLink.classList.remove('active');
+		bestLink.classList.add('active');
+		hot.style.display = 'none';
+		best.style.display = 'block';
+		prev1.style.display ='none';
+		prev2.style.display ='block';
+		next1.style.display ='none';
+		next2.style.display ='block';
+	})
+}
+tab();
+maxMenuLi();
 burger();
-bgSlider();
 subMenu();
